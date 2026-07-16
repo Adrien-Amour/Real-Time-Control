@@ -12,25 +12,23 @@ shift = 10
 
 class ControlApp(tk.Tk):
     def __init__(self):
-        # self.lasers = create_laser_objects(
-        #     r"C:\Users\probe\OneDrive - University of Sussex\Desktop\Experiment_Config\dds_config.cfg",
-        #     include_lasers=[
-        #         "397a", "397b", "397c", "866", "866 OP", "866 RP", "850 RP",
-        #         "729 temp", "854 SP1", "854 SP2", "850 SP1", "850 SP2"
-        #     ]
-        # )
-    
+
         self.lasers = create_laser_objects(
             r"C:\Users\probe\OneDrive - University of Sussex\Desktop\Experiment_Config\dds_config.cfg",
             include_lasers=[
-                "397b", "397c", "866", "866 OP", "866 RP", "850 RP",
-                "729 Temp1", "729 Temp2", "854 SP1", "854 SP2"
+                "397b", "397c", "866 RP", "854 Cav", "850 RP", "866 OP", "866S", "397a", "850 SP1", "850 SP2",  "854 SP1", "854 SP2", "729 t1", "729 t2"
             ]
         )
+        # self.lasers = create_laser_objects(
+        #     r"C:\Users\probe\OneDrive - University of Sussex\Desktop\Experiment_Config\dds_config.cfg",
+        #     include_lasers=[
+        #         "397b", "397c", "866 RP", "854 Cav"
+        #     ]
+        # )
 
         super().__init__()
         self.title("Control Application")
-        self.geometry("635x900")
+        self.geometry("635x1000")
 
         # Create notebook (tabbed interface)
         self.notebook = ttk.Notebook(self)
