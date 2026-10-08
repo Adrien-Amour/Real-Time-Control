@@ -8,6 +8,8 @@ from adriq.Custom_Tkinter import *
 from adriq.Optomechanics import *
 from adriq.laser_calibration import *
 from adriq.Trap_RF_Board import TrapControlWidget
+from adriq.HMP_4030 import HMP_4030, PSU_Control_Frame
+
 shift = 10
 
 class ControlApp(tk.Tk):
@@ -64,7 +66,7 @@ class ControlApp(tk.Tk):
         trap_x = shift + 18
         trap_y = 765
         self.trap_widget = TrapControlWidget(self.main_tab)
-        self.trap_widget.place(x=trap_x, y=trap_y, anchor="nw", width=300, height=60)
+        self.trap_widget.place(x=trap_x, y=trap_y, anchor="nw", width=275, height=35)
         # Move the logo just below the widget
         self.logo_label.place(x=trap_x, y=trap_y + 70, anchor="nw")
 
@@ -130,6 +132,10 @@ class ControlApp(tk.Tk):
         # --- RAM Tab Widgets ---
         self.ram_control_frame = RamControlFrame(self.ram_tab, self.lasers)
         self.ram_control_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        # self.coil_control_widget = PSU_Control_Frame(self.main_tab)
+        # self.coil_control_widget.place(x=trap_x, y=trap_y+210, anchor="nw", width=270, height=30)
+        # Move the logo just below the widget
 
 if __name__ == "__main__":
     app = ControlApp()

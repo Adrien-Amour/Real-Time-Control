@@ -84,7 +84,7 @@ def main():
     f_lo, f_hi = 20_300_000, 20_900_000  # 20.3 to 20.6 MHz
     n_steps, k = 128, 3
     set_lo_amplitude(port, 0.5)      # Set LO amplitude to 0.5
-    trap_amp = 1
+    trap_amp = 0.6
     set_trap_amplitude(port, trap_amp)  # Set trap amplitude to 0.5
 
     phases = list(range(0, 361, 10))  # 0, 10, ..., 360
